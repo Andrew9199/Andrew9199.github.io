@@ -25,7 +25,65 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    justify-items: center;
     overflow: hidden;
+}
+
+header .hero-input {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    right: 20px;
+    justify-content: flex-end;
+}
+
+header .hero-input .hero-input-container {
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3f40423f;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+header .hero-input .hero-input-container:hover {
+    box-shadow: 0 1px 6px 0 #20212447;
+    border-color: #dfe1e500;
+}
+
+header .hero-input .hero-input-container span {
+    width: 39px;
+    height: 39px;
+    background-image: url(./Recursos/icons/azuna.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+header .hero-input .hero-input-container input {
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+header .hero-input .hero-input-container .micro-icon {
+    background-image: url("https://img.icons8.com/android/24/000000/search.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+header .hero-info {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 header .hero-info .hero-title,
@@ -34,16 +92,11 @@ header .hero-info .hero-text {
     text-align: center;
 }
 
-header img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
 header .hero-button-container {
     width: 100%;
     height: auto;
     display: flex;
+    margin-bottom: 20px;
 }
 
 header .hero-button-container button {
@@ -54,6 +107,12 @@ header .hero-button-container button {
     border-radius: 20px;
     background-color: orange;
     padding: 10px;
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 main {
@@ -78,35 +137,7 @@ main p {
     margin: 10px;
 }
 
-main .anime1 {
-    background-image: url(./Recursos/kaguya-sama-love-is-war-caratula.jpg);
-}
-
-main .anime2 {
-    background-image: url(./Recursos/Gotoubun\ no\ Hanayome.jpg);
-}
-
-main .anime3 {
-    background-image: url(./Recursos/Karakai\ Jouzu\ no\ Takagi-san.jpg);
-}
-
-main .anime4 {
-    background-image: url(./Recursos/Kono\ Subarashii\ Sekai\ ni\ Shukufuku\ wo!.png);
-}
-
-main .anime5 {
-    background-image: url(./Recursos/Kunoichi\ Tsubaki\ no\ Mune\ no\ Uchi.jpg);
-}
-
-main .anime6 {
-    background-image: url(./Recursos/Miss-Kobayashi-Dragon-Maid.jpg);
-}
-
-main .anime7 {
-    background-image: url(./Recursos/Nagatoro\ san.jpg);
-}
-
-main .anime {
+main .animeCard {
     height: 100%;
     background-position: right;
     background-repeat: no-repeat;
@@ -129,7 +160,7 @@ main .anime-text {
     align-items: center;
 }
 
-main .anime::before {
+main .animeCard::before {
     content: "";
     position: absolute;
     width: 33.2%;
@@ -137,7 +168,7 @@ main .anime::before {
     background: linear-gradient(90deg, #ffffff 20%, rgba(0, 0, 0, 0));
 }
 
-main .anime .button-container {
+main .animeCard .button-container {
     width: 100%;
     height: 25px;
     display: flex;
@@ -145,13 +176,23 @@ main .anime .button-container {
     align-self: flex-end;
 }
 
-main .anime .button-container button {
+main .animeCard .button-container button {
     height: 25px;
     width: 30%;
     background-color: orange;
     border: none;
     border-radius: 20px;
     z-index: 5;
+}
+
+@media (max-width: 1159px) {
+    header .hero-info .hero-title {
+        font-size: 1.8rem;
+    }
+
+    header .hero-info .hero-text {
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 914px) {
@@ -188,10 +229,19 @@ main .anime .button-container button {
 
 @media (max-width: 600px) {
 
-    main .anime::before {
+    main .animeCard::before {
         width: 75%;
         height: 200px;
         background: linear-gradient(90deg, #ffffff 20%, rgba(0, 0, 0, 0));
     }
 
+}
+
+@media (max-width: 585px) {
+    header {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
 }
